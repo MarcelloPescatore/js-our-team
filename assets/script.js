@@ -1,3 +1,14 @@
+// // test link
+// console.log('test');
+
+// Assignment:
+// Dato un array di oggetti rappresentante un team di un’azienda, creare una pagina dedicata in cui mostrare una card per ciascun componente.
+// (trovate l’array del team all’interno della cartella in allegato)
+
+// Bonus:
+// Rendere l’esercizio responsive, mandando a capo le card
+// Aggiungere un form di agginta membri che permetta di visualizzare il nuovo membro sulla pagina (usate una foto qualunque, anche vostra se volete sentirvi parte del team! :sorridere:)
+
 const teamMembers = [
   {
     name: "Marco Bianchi",
@@ -37,5 +48,36 @@ const teamMembers = [
   }
 ];
 
-// // test link
-// console.log(teamMembers);
+// vogliamo prendere reteiriamo il pescaggio di un teamMember dall'array
+for (let i = 0; i < teamMembers.length; i++){
+  // assegno questa iterazione alla variabile teamMember
+  let teamMember = teamMembers[i];
+
+  // destrutturiamo l'oggetto teamMember estraendone le proprietà 
+  let {name, role, email, img} = teamMember
+  // stampiamo in console per verificare
+  console.log(name, role, email, img);
+
+  // creaimo una variabile markup in cui aggiungere le nostre variabili appena create
+  const markup = `
+    <div class="col-12 col-md-6 col-lg-4 d-flex">
+      <div class="col-4">
+        <img src="./assets/${img}" alt="" class="w-100">
+      </div>
+      <div class="col-8 ps-3 d-flex flex-column justify-content-center">
+        <h3>${name}</h3>
+        <h5>${role}</h5>
+        <span>${email}</span>
+      </div>
+    </div>
+  
+  `
+  // ora aggiugniamo il markup alla pagina html 
+  document.getElementById('row-card').innerHTML += markup
+  
+
+}
+
+
+
+
