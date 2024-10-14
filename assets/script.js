@@ -78,6 +78,66 @@ for (let i = 0; i < teamMembers.length; i++){
 
 }
 
+// bonus 2
+// prendiamo il form come elemento
+const formEl = document.querySelector('form')
+
+// aggiungiamo un event listener 
+formEl.addEventListener('submit', (e) =>{
+  e.preventDefault();
+
+  // prendiamo i riferimenti degli input destrutturandoli
+  const {name, role, email, img} = formEl.elements;
+  // accediamo ai valori
+  const nameValue = name.value;
+  const roleValue = role.value;
+  const emailValue = email.value;
+  const imgValue = img.files[0]; //così ci assicuriamo di accedere al primo file iserito
+
+  // verifichiamo che il file sia un'immagine
+  if (imgValue && imgValue.type === "image/jpeg" || imgValue && imgValue.type === "image/png"){
+    // feedback img
+    document.getElementById('img').style.backgroundColor = 'lightgreen';
+
+    // Creiamo un URL temporaneo per l'immagine
+    const imgUrl = URL.createObjectURL(imgValue);
+
+    // creiamo un nuovo oggetto 
+    const newTeamMember = {
+      nameValue,
+      roleValue,
+      emailValue,
+      imgUrl
+    }
+
+    // creaimo una variabile markup in cui aggiungere le nostre le proprietà del nostro oggetto 
+    const markup = `
+      <div class="col-12 col-md-6 col-xl-4 d-flex py-2">
+        <div class="col-4">
+          <img src="${imgUrl}" alt="" class="w-100">
+        </div>
+        <div class="col-8 ps-3 d-flex flex-column justify-content-center" id="data">
+          <h3>${nameValue}</h3>
+          <h5>${roleValue}</h5>
+          <span>${emailValue}</span>
+        </div>
+      </div>
+    
+    `
+    // ora aggiugniamo il markup alla pagina html 
+    document.getElementById('row-card').innerHTML += markup
+      
+
+  } else {
+    // feedback 
+    document.getElementById('img').style.backgroundColor = 'lightcoral';
+
+    // message in page
+    document.getElementById('fileHelpBlock').style.display ='block';
+  }
+
+})
+
 
 
 

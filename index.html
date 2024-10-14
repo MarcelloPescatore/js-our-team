@@ -46,7 +46,10 @@
                     <!-- /email -->
                     <div class="col-12 col-md-4 col-lg-3 p-2">
                         <label for="img" class="form-label">Profile Image</label>
-                        <input class="form-control" type="file" id="img" accept="image/jpeg, image/png" required>
+                        <input class="form-control" type="file" id="img" accept="image/jpeg, image/png" aria-describedby="fileHelpBlock" required>
+                        <div id="fileHelpBlock" class="form-text" style="color: red; display: none;">
+                            "check the file format, it must be .jpeg or .png"
+                        </div>
                     </div>
                     <!-- /img -->
                     <div class="col-12 col-md-4 col-lg-3 d-flex align-items-center justify-content-start py-4 py-lg-0 px-2">
