@@ -18,12 +18,46 @@
         <div class="container py-5">
             <div class="row">
                 <h1 class="text-md-center">Meet our Team</h1>
-                <h5 class="col-12 mx-auto text-md-center pt-2 pt-md-5">Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatum quis magni suscipit nulla adipisci facere recusandae hic. Animi, molestiae. Cum, laboriosam veniam! Tempore saepe suscipit sunt ducimus quo consectetur fugiat!</h5>
+                <h5 class="col-12 mx-auto text-md-center pt-2 py-md-4">Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatum quis magni suscipit nulla adipisci facere recusandae hic. Animi, molestiae. Cum, laboriosam veniam! Tempore saepe suscipit sunt ducimus quo consectetur fugiat!</h5>
             </div>
             <!-- /title + text -->
 
-            <div class="row"></div> <!-- bonus -->
+            <hr>
+
+            <div class="row mt-4">
+                <h2>
+                    Add a new member
+                </h2>
+                <form action="" class="d-flex flex-wrap">
+                    <div class="col-12 col-md-4 col-lg-3 p-2">
+                        <label for="name" class="form-label">Name</label>
+                        <input type="text" class="form-control" id="name" placeholder="Mario Rossi" required>
+                    </div>
+                    <!-- /name -->
+                    <div class="col-12 col-md-4 col-lg-3 p-2">
+                        <label for="role" class="form-label">Role</label>
+                        <input type="email" class="form-control" id="role" placeholder="Front-end Developer" required>
+                    </div>
+                    <!-- /role -->
+                    <div class="col-12 col-md-4 col-lg-3 p-2">
+                        <label for="email" class="form-label">Email address</label>
+                        <input type="email" class="form-control" id="email" placeholder="name@example.com" required>
+                    </div>
+                    <!-- /email -->
+                    <div class="col-12 col-md-4 col-lg-3 p-2">
+                        <label for="img" class="form-label">Profile Image</label>
+                        <input class="form-control" type="file" id="img" accept="image/jpeg, image/png" required>
+                    </div>
+                    <!-- /img -->
+                    <div class="col-12 col-md-4 col-lg-3 d-flex align-items-center justify-content-start py-4 py-lg-0 px-2">
+                        <button class="btn btn-primary my-3" type="submit">Add a new member</button>
+                    </div>
+                    <!-- /button submit -->
+                </form>
+            </div> <!-- bonus -->
             <!-- /row input new member -->
+
+            <hr>
 
             <div class="row my-2 my-md-3 g-4 d-flex" id="row-card">
             </div>
