@@ -60,11 +60,11 @@ for (let i = 0; i < teamMembers.length; i++){
 
   // creaimo una variabile markup in cui aggiungere le nostre variabili appena create
   const markup = `
-    <div class="col-12 col-md-6 col-lg-4 d-flex">
+    <div class="col-12 col-md-6 col-xl-4 d-flex py-2">
       <div class="col-4">
         <img src="./assets/${img}" alt="" class="w-100">
       </div>
-      <div class="col-8 ps-3 d-flex flex-column justify-content-center">
+      <div class="col-8 ps-3 d-flex flex-column justify-content-center" id="data">
         <h3>${name}</h3>
         <h5>${role}</h5>
         <span>${email}</span>
